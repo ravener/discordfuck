@@ -1,0 +1,29 @@
+{
+  "name": "discordfuck",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A Discord Bot with commands written in brainfuck",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint .",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravener/discordfuck.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "brainfuck"
+  ],
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "author": "Raven Ravener <ravener.anime@gmail.com> (https://ravener.now.sh/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ravener/discordfuck/issues"
+  },
+  "homepage": "https://github.com/ravener/discordfuck#readme"
+}
