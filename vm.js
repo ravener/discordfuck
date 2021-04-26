@@ -3,7 +3,7 @@
  *
  * We implement the following spec:
  *
- * • 30,000 memory cells but extends dynamically. (unbounded)
+ * • 30,000 memory cells.
  * • EOF sets the cell to 0
  * • Cells are JavaScript integers.
  * • The whole output is buffered until the program terminates.
@@ -85,8 +85,7 @@ class VM {
 
   next() {
     if (this.cp >= this.cells.length) {
-      // Extend the cells with 4 extra slots.
-      this.cells.push(0, 0, 0, 0);
+      throw new RangeError("Cell Overflow.");
     }
 
     this.cp++;
