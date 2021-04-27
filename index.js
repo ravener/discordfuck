@@ -58,7 +58,7 @@ client.on("message", async (msg) => {
     const help = [
       ...commands.keys(),
       // JavaScript commands aren't loaded anywhere.
-      "help", "stats", "brainfuck"
+      "help", "stats", "brainfuck", "invite"
     ].sort();
 
     return msg.channel.send(`**Commands**\n\n${help.join(", ")}`);
@@ -78,6 +78,14 @@ client.on("message", async (msg) => {
       `• Node.js    :: ${process.version}`,
       `• discord.js :: ${version}`
     ].join("\n"), { code: "ascii" });
+  }
+
+  // Invite command.
+  if (name === "invite") {
+    return msg.channel.send([
+      "You can invite me via the following link:",
+      `https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=379968&scope=bot`
+    ].join("\n"));
   }
 
   // Reload command.

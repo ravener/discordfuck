@@ -18,12 +18,15 @@ You may use the `test.js` script to prototype and test your commands in the term
 ## Running
 Just `npm install`, fill the `config.json` and run that `index.js` nothing special.
 
+You may also invite the original public instance I run [here](https://discord.com/oauth2/authorize?client_id=411952600586649602&permissions=379968&scope=bot)
+
 ## Commands
 The following commands are written in JavaScript:
 - `help` Shows a list of commands.
 - `reload` (owner-only) Reloads a command.
 - `eval` (owner-only) Evaluates JavaScript.
 - `stats`
+- `invite`
 - `brainfuck` (alias: `bf`/`bfeval`) Evaluates brainfuck.
 
 Brainfuck Eval can be used by anyone but it has a timeout of 5 seconds so it should be safe, if ran by the owner they'll get a timeout of 60 seconds.
