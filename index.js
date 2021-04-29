@@ -41,6 +41,8 @@ client.on("ready", () => {
 
   console.log(`Logged in as ${tag} (${id})`);
   console.log(`Loaded ${commands.size} commands.`);
+
+  client.user.setActivity(`${prefix}help | Executing brainfuck`);
 });
 
 client.on("message", async (msg) => {
@@ -51,7 +53,7 @@ client.on("message", async (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   // Split the arguments.
-  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+  const args = msg.content.slice(prefix.length).trim().split(/\s+/g);
   const name = args.shift().toLowerCase();
 
   if (name === "help") {
@@ -115,10 +117,10 @@ client.on("message", async (msg) => {
     }
 
     try {
-      const results = inspect(await eval(code), { depth: null });
+      const results = inspect(await eval(code), { depth: 1 });
 
       if (results.length >= 1990) {
-        return msg.reply("Results too long.");
+        return msg.channel.send("Results too long.");
       }
 
       return msg.channel.send(results, { code: "js" });
