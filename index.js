@@ -53,7 +53,7 @@ client.on("message", async (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   // Split the arguments.
-  const args = msg.content.slice(prefix.length).trim().split(/\s+/g);
+  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
   const name = args.shift().toLowerCase();
 
   if (name === "help") {
