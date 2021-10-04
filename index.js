@@ -3,7 +3,7 @@
  * @license MIT
  */
 
-const { Client, version } = require("discord.js");
+const { Client, version, Intents } = require("discord.js");
 const { token, prefix, owner } = require("./config.json");
 const { readFileSync, readdirSync } = require("fs");
 const { inspect } = require("util");
@@ -12,9 +12,7 @@ const { run } = require("./vm.js");
 
 const client = new Client({
   disableMentions: "everyone",
-  ws: {
-    intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES"]
-  }
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES]
 });
 
 // Where all the commands are stored.
@@ -45,7 +43,7 @@ client.on("ready", () => {
   client.user.setActivity(`${prefix}help | Executing brainfuck`);
 });
 
-client.on("message", async (msg) => {
+client.on("messageCreate", async (msg) => {
   // Ignore bots and webhooks.
   if (msg.author.bot || msg.webhookID) return;
 
