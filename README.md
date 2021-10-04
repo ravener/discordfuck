@@ -16,6 +16,8 @@ For example, an echo-character command can just be `,.` (saved in `commands/echo
 You may use the `test.js` script to prototype and test your commands in the terminal.
 
 ## Running
+**Make sure you have [Node v16+](https://nodejs.org/en/)!**
+
 Just `npm install`, fill the `config.json` and run that `index.js` nothing special.
 
 You may also invite the original public instance I run [here](https://discord.com/oauth2/authorize?client_id=411952600586649602&permissions=379968&scope=bot)

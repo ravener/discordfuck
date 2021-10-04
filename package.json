@@ -18,7 +18,7 @@
     "brainfuck"
   ],
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^13.1.0"
   },
   "author": "Raven Ravener <ravener.anime@gmail.com> (https://ravener.now.sh/)",
   "license": "MIT",
