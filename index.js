@@ -43,7 +43,7 @@ client.on("ready", () => {
   client.user.setActivity(`${prefix}help | Executing brainfuck`);
 });
 
-client.on("message", async (msg) => {
+client.on("messageCreate", async (msg) => {
   // Ignore bots and webhooks.
   if (msg.author.bot || msg.webhookID) return;
 
