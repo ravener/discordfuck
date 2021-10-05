@@ -68,6 +68,7 @@ client.on("messageCreate", async (msg) => {
     const { heapUsed, heapTotal } = process.memoryUsage();
 
     return msg.channel.send([
+      "```asciidoc",
       "= STATISTICS =",
       "",
       `• Mem Usage  :: ${(heapUsed / 1024 / 1024).toFixed(2)} MB`,
@@ -76,8 +77,9 @@ client.on("messageCreate", async (msg) => {
       `• Channels   :: ${client.channels.cache.size}`,
       `• Users      :: ${client.users.cache.size}`,
       `• Node.js    :: ${process.version}`,
-      `• discord.js :: ${version}`
-    ].join("\n"), { code: "ascii" });
+      `• discord.js :: ${version}`,
+      "```"
+    ].join("\n"));
   }
 
   // Invite command.
@@ -121,9 +123,9 @@ client.on("messageCreate", async (msg) => {
         return msg.channel.send("Results too long.");
       }
 
-      return msg.channel.send(results, { code: "js" });
+      return msg.channel.send(["```js", results, "```"].join("\n"));
     } catch(err) {
-      return msg.channel.send(err.toString(), { code: "js" });
+      return msg.channel.send(["```js", err.toString(), "```"].join("\n"));
     }
   }
 
@@ -147,7 +149,7 @@ client.on("messageCreate", async (msg) => {
       await run({ instructions }, msg, [], timeout);
       return;
     } catch(err) {
-      return msg.channel.send(err.toString(), { code: "js" });
+      return msg.channel.send(["```js", err.toString(), "```"].join("\n"));
     }
   }
 
@@ -167,7 +169,7 @@ client.on("messageCreate", async (msg) => {
     await run(command, msg, args);
   } catch(err) {
     console.error(err);
-    return msg.channel.send(err.toString(), { code: "js" });
+    return msg.channel.send(["```js", err.toString(), "```"].join("\n"));
   }
 });
 
