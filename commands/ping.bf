@@ -12,7 +12,7 @@ Print P
 Our cell is already at 80 and ASCII o is 111 so add more
 +++++++++++++++++++++++++++++++
 
-Print i
+Print o
 .
 
 Now n is just 110 so subtract 1
